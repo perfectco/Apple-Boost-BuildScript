@@ -307,6 +307,9 @@ OPTIONS:
     --no-clean
         Do not clean up existing build artifacts before building.
 
+    --cwd
+        Use the current working directory to build in, rather than the location of this script.
+
     -j | --threads [num]
         Specify the number of threads to use.
         Defaults to $THREADS
@@ -557,6 +560,10 @@ parseArgs()
 
             --no-thinning)
                 NO_THINNING=1
+                ;;
+
+            --cwd)
+                CURRENT_DIR=$(pwd)
                 ;;
 
             -j | --threads)
